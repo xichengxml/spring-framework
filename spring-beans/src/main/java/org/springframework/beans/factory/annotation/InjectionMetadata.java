@@ -115,7 +115,9 @@ public class InjectionMetadata {
 		Collection<InjectedElement> elementsToIterate =
 				(checkedElements != null ? checkedElements : this.injectedElements);
 		if (!elementsToIterate.isEmpty()) {
+			// 遍历每个能注入的属性，进行注入
 			for (InjectedElement element : elementsToIterate) {
+				// element可能是Method，也可能是Field
 				element.inject(target, beanName, pvs);
 			}
 		}
@@ -166,6 +168,9 @@ public class InjectionMetadata {
 	 */
 	public abstract static class InjectedElement {
 
+		/**
+		 * 方法或属性
+		 */
 		protected final Member member;
 
 		protected final boolean isField;
