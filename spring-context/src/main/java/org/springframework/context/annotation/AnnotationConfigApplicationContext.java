@@ -88,8 +88,13 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * {@link Configuration @Configuration} classes
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
+		// 初始化AnnotatedBeanDefinitionReader和ClassPathBeanDefinitionScanner
+		// AnnotatedBeanDefinitionReader会生成5个BeanDefinition
+		// ClassPathBeanDefinitionScanner
 		this();
+		// 先把AppConfig类注册为AnnotatedGenericBeanDefinition
 		register(componentClasses);
+		// *到此为止AnnotationConfigApplicationContext有6个BeanDefinition
 		refresh();
 	}
 

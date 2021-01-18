@@ -33,3 +33,23 @@
 2. postProcessProperties
 3. findAutowireCandidates 通过类型找候选者
 
+#### bean生命周期
+class -> new 对象 -> 填充属性 -> 放到单例池 -> bean对象
+
+1. 实例化
+    1. 实例化前 InstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation
+    2. 实例化 new对象
+    3. 实例化后 InstantiationAwareBeanPostProcessor.postProcessAfterInstantiation
+
+2. 初始化
+    1. 初始化前
+    2. 初始化 InitializingBean
+    3. 初始化后
+
+3.放入单例池
+
+#### bean生命周期源码
+1. org.springframework.beans.factory.BeanFactory
+2. org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(java.lang.Class<T>)
+3. org.springframework.context.ApplicationContext
+
