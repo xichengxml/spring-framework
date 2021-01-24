@@ -18,6 +18,7 @@ package org.springframework.test.context.groovy;
 
 import javax.annotation.Resource;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -75,7 +76,7 @@ class GroovySpringContextTests implements BeanNameAware, InitializingBean {
 	}
 
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = beanName;
 	}
 

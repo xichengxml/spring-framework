@@ -19,6 +19,7 @@ package org.springframework.aop.aspectj;
 import java.lang.reflect.Method;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -153,7 +154,7 @@ class PrecedenceTestAspect implements BeanNameAware, Ordered {
 
 
 	@Override
-	public void setBeanName(String name) {
+	public void setBeanName(@NotNull String name) {
 		this.name = name;
 	}
 
@@ -248,7 +249,7 @@ class SimpleSpringBeforeAdvice implements MethodBeforeAdvice, BeanNameAware {
 	 * @see org.springframework.beans.factory.BeanNameAware#setBeanName(java.lang.String)
 	 */
 	@Override
-	public void setBeanName(String name) {
+	public void setBeanName(@NotNull String name) {
 		this.name = name;
 	}
 

@@ -18,6 +18,7 @@ package org.springframework.beans.testfixture.beans;
 
 import java.io.Serializable;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 
@@ -52,7 +53,7 @@ public class DerivedTestBean extends TestBean implements Serializable, BeanNameA
 
 
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		if (this.beanName == null || beanName == null) {
 			this.beanName = beanName;
 		}

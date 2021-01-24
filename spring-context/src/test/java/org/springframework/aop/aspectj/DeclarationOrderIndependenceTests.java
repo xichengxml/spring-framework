@@ -19,6 +19,7 @@ package org.springframework.aop.aspectj;
 import java.io.Serializable;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -91,7 +92,7 @@ public class DeclarationOrderIndependenceTests {
 		private String beanName;
 
 		@Override
-		public void setBeanName(String name) {
+		public void setBeanName(@NotNull String name) {
 			this.beanName = name;
 		}
 

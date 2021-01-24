@@ -16,6 +16,7 @@
 
 package org.springframework.beans.factory.xml;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 
 /**
@@ -28,7 +29,7 @@ public class GeneratedNameBean implements BeanNameAware {
 	private GeneratedNameBean child;
 
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = beanName;
 	}
 

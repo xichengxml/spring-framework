@@ -19,6 +19,7 @@ package org.springframework.beans.factory.config;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyAccessorFactory;
@@ -156,7 +157,7 @@ public class PropertyPathFactoryBean implements FactoryBean<Object>, BeanNameAwa
 	 * This allows for concise bean definitions with just an id/name.
 	 */
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = StringUtils.trimAllWhitespace(BeanFactoryUtils.originalBeanName(beanName));
 	}
 

@@ -25,6 +25,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -132,7 +133,7 @@ public class ServletWrappingController extends AbstractController
 	}
 
 	@Override
-	public void setBeanName(String name) {
+	public void setBeanName(@NotNull String name) {
 		this.beanName = name;
 	}
 

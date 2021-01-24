@@ -27,6 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jetbrains.annotations.NotNull;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -142,7 +143,7 @@ public abstract class AbstractView implements View, BeanNameAware, ApplicationCo
 	 * <p>Framework code must call this when constructing views.
 	 */
 	@Override
-	public void setBeanName(@Nullable String beanName) {
+	public void setBeanName(@NotNull @Nullable String beanName) {
 		this.beanName = beanName;
 	}
 

@@ -18,6 +18,7 @@ package org.springframework.test.context.testng;
 
 import javax.annotation.Resource;
 
+import org.jetbrains.annotations.NotNull;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -92,7 +93,7 @@ public class ConcreteTransactionalTestNGSpringContextTests extends AbstractTrans
 	}
 
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = beanName;
 	}
 

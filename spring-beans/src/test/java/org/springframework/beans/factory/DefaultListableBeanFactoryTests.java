@@ -43,6 +43,7 @@ import java.util.stream.IntStream;
 import javax.annotation.Priority;
 import javax.security.auth.Subject;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.BeansException;
@@ -2712,7 +2713,7 @@ class DefaultListableBeanFactoryTests {
 		}
 
 		@Override
-		public void setBeanName(String name) {
+		public void setBeanName(@NotNull String name) {
 			this.beanName = name;
 		}
 

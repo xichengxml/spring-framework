@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -159,7 +160,7 @@ public abstract class ExecutorConfigurationSupport extends CustomizableThreadFac
 	}
 
 	@Override
-	public void setBeanName(String name) {
+	public void setBeanName(@NotNull String name) {
 		this.beanName = name;
 	}
 

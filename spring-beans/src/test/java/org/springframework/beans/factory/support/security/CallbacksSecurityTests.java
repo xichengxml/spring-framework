@@ -33,6 +33,7 @@ import java.util.function.Consumer;
 import javax.security.auth.AuthPermission;
 import javax.security.auth.Subject;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -143,7 +144,7 @@ public class CallbacksSecurityTests {
 		}
 
 		@Override
-		public void setBeanName(String name) {
+		public void setBeanName(@NotNull String name) {
 			checkCurrentContext();
 		}
 

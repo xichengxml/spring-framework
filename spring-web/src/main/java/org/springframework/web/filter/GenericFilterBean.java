@@ -28,6 +28,7 @@ import javax.servlet.ServletException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;
@@ -108,7 +109,7 @@ public abstract class GenericFilterBean implements Filter, BeanNameAware, Enviro
 	 * @see #getFilterName()
 	 */
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = beanName;
 	}
 

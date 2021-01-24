@@ -16,6 +16,7 @@
 
 package org.springframework.beans.factory.config;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanDefinitionStoreException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -192,7 +193,7 @@ public abstract class PlaceholderConfigurerSupport extends PropertyResourceConfi
 	 * @see org.springframework.core.io.ResourceEditor
 	 */
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = beanName;
 	}
 

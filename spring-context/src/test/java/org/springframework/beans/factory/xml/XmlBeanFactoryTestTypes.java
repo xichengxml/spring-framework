@@ -23,6 +23,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -471,7 +472,7 @@ class ProtectedLifecycleBean implements BeanNameAware, BeanFactoryAware, Initial
 	}
 
 	@Override
-	public void setBeanName(String name) {
+	public void setBeanName(@NotNull String name) {
 		this.beanName = name;
 	}
 

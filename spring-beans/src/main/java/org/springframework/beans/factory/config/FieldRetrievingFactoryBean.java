@@ -18,6 +18,7 @@ package org.springframework.beans.factory.config;
 
 import java.lang.reflect.Field;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanClassLoaderAware;
 import org.springframework.beans.factory.BeanFactoryUtils;
 import org.springframework.beans.factory.BeanNameAware;
@@ -156,7 +157,7 @@ public class FieldRetrievingFactoryBean
 	 * This allows for concise bean definitions with just an id/name.
 	 */
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = StringUtils.trimAllWhitespace(BeanFactoryUtils.originalBeanName(beanName));
 	}
 

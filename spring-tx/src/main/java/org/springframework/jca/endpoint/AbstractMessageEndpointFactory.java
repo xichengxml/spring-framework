@@ -30,6 +30,7 @@ import javax.transaction.xa.XAResource;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.lang.Nullable;
 import org.springframework.transaction.jta.SimpleTransactionFactory;
@@ -130,7 +131,7 @@ public abstract class AbstractMessageEndpointFactory implements MessageEndpointF
 	 * automatically when defined within Spring's bean factory.
 	 */
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = beanName;
 	}
 

@@ -18,6 +18,7 @@ package org.springframework.web.reactive.handler;
 
 import java.util.Map;
 
+import org.jetbrains.annotations.NotNull;
 import reactor.core.publisher.Mono;
 
 import org.springframework.beans.factory.BeanNameAware;
@@ -167,7 +168,7 @@ public abstract class AbstractHandlerMapping extends ApplicationObjectSupport
 	}
 
 	@Override
-	public void setBeanName(String name) {
+	public void setBeanName(@NotNull String name) {
 		this.beanName = name;
 	}
 

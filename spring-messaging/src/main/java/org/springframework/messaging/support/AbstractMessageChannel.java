@@ -23,6 +23,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.lang.Nullable;
 import org.springframework.messaging.Message;
@@ -73,7 +74,7 @@ public abstract class AbstractMessageChannel implements MessageChannel, Intercep
 	 * A message channel uses the bean name primarily for logging purposes.
 	 */
 	@Override
-	public void setBeanName(String name) {
+	public void setBeanName(@NotNull String name) {
 		this.beanName = name;
 	}
 

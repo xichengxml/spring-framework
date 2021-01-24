@@ -16,6 +16,7 @@
 
 package org.springframework.beans.testfixture.beans;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -60,7 +61,7 @@ public class LifecycleBean implements BeanNameAware, BeanFactoryAware, Initializ
 	}
 
 	@Override
-	public void setBeanName(String name) {
+	public void setBeanName(@NotNull String name) {
 		this.beanName = name;
 	}
 

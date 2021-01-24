@@ -16,6 +16,7 @@
 
 package org.springframework.context.support;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
@@ -137,7 +138,7 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 	 * for cases where the context instance is itself defined as a bean.
 	 */
 	@Override
-	public void setBeanName(String name) {
+	public void setBeanName(@NotNull String name) {
 		if (!this.setIdCalled) {
 			super.setId(name);
 			setDisplayName("ApplicationContext '" + name + "'");

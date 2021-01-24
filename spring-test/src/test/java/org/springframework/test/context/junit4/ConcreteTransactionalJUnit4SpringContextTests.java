@@ -18,6 +18,7 @@ package org.springframework.test.context.junit4;
 
 import javax.annotation.Resource;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -81,7 +82,7 @@ public class ConcreteTransactionalJUnit4SpringContextTests extends AbstractTrans
 	}
 
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = beanName;
 	}
 

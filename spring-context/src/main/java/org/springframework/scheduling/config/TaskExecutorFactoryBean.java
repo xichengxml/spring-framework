@@ -18,6 +18,7 @@ package org.springframework.scheduling.config;
 
 import java.util.concurrent.RejectedExecutionHandler;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.FactoryBean;
@@ -74,7 +75,7 @@ public class TaskExecutorFactoryBean implements
 	}
 
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		this.beanName = beanName;
 	}
 

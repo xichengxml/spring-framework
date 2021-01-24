@@ -18,6 +18,7 @@ package org.springframework.cache.concurrent;
 
 import java.util.concurrent.ConcurrentMap;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -78,7 +79,7 @@ public class ConcurrentMapCacheFactoryBean
 	}
 
 	@Override
-	public void setBeanName(String beanName) {
+	public void setBeanName(@NotNull String beanName) {
 		if (!StringUtils.hasLength(this.name)) {
 			setName(beanName);
 		}

@@ -34,17 +34,20 @@
 3. findAutowireCandidates 通过类型找候选者
 
 #### bean生命周期
-class -> new 对象 -> 填充属性 -> 放到单例池 -> bean对象
+广义： class -> BeanDefinition -> BeanFactoryPostProcessor -> new 对象 -> 填充属性 -> Aware -> 初始化 -> AOP -> 放到单例池 -> bean对象
+
+狭义
 
 1. 实例化
-    1. 实例化前 InstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation
-    2. 实例化 new对象
-    3. 实例化后 InstantiationAwareBeanPostProcessor.postProcessAfterInstantiation
-
-2. 初始化
-    1. 初始化前
-    2. 初始化 InitializingBean
-    3. 初始化后
+    * 实例化前 InstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation
+    * 实例化 new对象
+    * 实例化后 InstantiationAwareBeanPostProcessor.postProcessAfterInstantiation
+ 
+2. 初始化（org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean）
+    * Aware
+    * 初始化前 BeanPostProcessor.postProcessBeforeInitialization
+    * 初始化 InitializingBean
+    * 初始化后 BeanPostProcessor.postProcessAfterInitialization
 
 3.放入单例池
 
@@ -53,3 +56,8 @@ class -> new 对象 -> 填充属性 -> 放到单例池 -> bean对象
 2. org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(java.lang.Class<T>)
 3. org.springframework.context.ApplicationContext
 
+#### 资料链接
+1. https://www.processon.com/view/link/5fb8a6847d9c0857dda8ba4b#map
+2. https://www.processon.com/view/link/5fbf58dae401fd2d6edc0f8a
+3. https://www.processon.com/view/link/5fb52cddf346fb5f0e22f385#map
+4. https://www.yuque.com/docs/share/c6934140-f84c-472c-b34a-2efc62c7dbb8?#

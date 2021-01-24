@@ -31,6 +31,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.http.MediaType;
 import org.springframework.lang.Nullable;
@@ -281,7 +282,7 @@ public abstract class AbstractView extends WebApplicationObjectSupport implement
 	 * <p>Framework code must call this when constructing views.
 	 */
 	@Override
-	public void setBeanName(@Nullable String beanName) {
+	public void setBeanName(@NotNull @Nullable String beanName) {
 		this.beanName = beanName;
 	}
 

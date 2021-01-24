@@ -40,6 +40,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -3542,7 +3543,7 @@ public class AutowiredAnnotationBeanPostProcessorTests {
 		private String name;
 
 		@Override
-		public void setBeanName(String name) {
+		public void setBeanName(@NotNull String name) {
 			this.name = name;
 		}
 
