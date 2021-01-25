@@ -8,6 +8,11 @@ a.b = b;
 b.a = a
 ```
 
+#### 缓存
+* 一级缓存 单例池
+* 二级缓存 LubanMap
+* 三级缓存 <beanName, lambda>
+
 #### Spring的循环依赖
 T03_AService和T03_BService
 
@@ -32,16 +37,23 @@ BService的生命周期:
 
 AService生命周期:
 1. 实例化 new对象 -> 二级缓存<aService，对象> 
-2. bService属性填充 -> 去二级缓存获取 -> 找不到, 实例化
+2. bService属性填充 -> 单例池获取 -> 取不到 -> 去二级缓存获取 -> 找不到, 实例化 -> 放二级缓存
 
 BService生命周期:
 1. 实例化 new对象 -> 二级缓存<bService，对象> 
 2. aService属性填充 -> 去二级缓存获取
 
-解决了问题，但是缺陷是，二级缓存保存的是原始对象
+解决了问题，但是缺陷是，二级缓存保存的是原始对象 -> AOP提前
 
 org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean
 
-#### 解决方案
+#### 三级缓存
 
-AOP过程提前
+AService生命周期:
+...
+
+BService生命周期:
+1. 实例化 new对象 -> 原始对象
+2. aService属性填充 -> 单例池 -> 取不到 -> 二级缓存 -> 取不到 -> 出现了循环依赖 -> AOP -> 三级缓存Map -> 执行lambda -> AService的代理对象 -> LuBanMap
+
+
