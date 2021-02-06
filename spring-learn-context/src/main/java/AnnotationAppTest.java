@@ -1,13 +1,13 @@
-import com.xicheng.demo.AppConfig;
-import com.xicheng.demo.User;
+import com.xicheng.demo.common.AppConfig;
+import com.xicheng.demo.common.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class AppTest {
+public class AnnotationAppTest {
 
 	static AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
 	public static void main(String[] args) {
-		User user = (User) context.getBean("user");
+		User user = context.getBean("user", User.class);
 		System.out.println(user.getName());
 	}
 

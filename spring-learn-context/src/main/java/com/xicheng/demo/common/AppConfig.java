@@ -1,4 +1,4 @@
-package com.xicheng.demo;
+package com.xicheng.demo.common;
 
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.ComponentScan;

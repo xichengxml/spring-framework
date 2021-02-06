@@ -94,7 +94,7 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 		this();
 		// 先把AppConfig类注册为AnnotatedGenericBeanDefinition
 		register(componentClasses);
-		// *到此为止AnnotationConfigApplicationContext有6个BeanDefinition
+		// * 到此为止AnnotationConfigApplicationContext有6个BeanDefinition
 		refresh();
 	}
 
